@@ -1,0 +1,163 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+body,html {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #000;
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#racingGame {
+	width: 100%;
+	height: 100%;
+	.board {
+		position: relative;
+		width: 500px;
+		margin: 0 auto;
+		background: #fff;
+		height: 100%;
+		overflow: hidden;
+		.kic {
+				position: absolute;
+				font-size: 30px;
+				top: 0;
+				right: 0;
+				color: red;
+				z-index: 1900;
+			}
+		.start {
+			display: block;
+			width: 260px;
+			height: 86px;
+			position: absolute;
+			top: 45%;
+			
+			left: 22%;
+			
+			margin: 0 auto;
+			background: url('../images/start.png');
+		}
+		.hide {
+			display: none;
+		}
+		.roadbed {
+			
+			background: url('../images/road.png');
+			position: absolute;
+			width: 100%;
+			height: 1600px;
+			top: -800px;
+			margin: 0 auto;
+		}
+		.runStart {
+
+			-webkit-animation: roadRun 1s;
+			/*运动次数：无限*/
+			-webkit-animation-iteration-count: infinite;
+			/*运动曲线：直线，速率相等*/
+			-webkit-animation-timing-function:linear;
+		}
+		/*注册道路运动动作*/
+		@-webkit-keyframes roadRun {
+			0% {top: -800px};
+			100% {top: 0px}
+		}
+
+		
+
+		.road {
+			position: relative;
+			width: 300px;
+			height: 100%;
+			margin: 0 auto;
+
+			.hero {
+				position: absolute;
+				bottom: 20px;
+				width: 80px;
+				height: 162px;
+				-webkit-transition: all .4s;
+				background: url('../images/hero.png');
+			}
+			.enemyCls {
+				position: absolute;
+				top: 0;
+				left: 15px;
+				width: 80px;
+				height: 162px;
+				
+				
+
+			}
+			.p01 {
+				background: url('../images/car0.png');
+				.carStart;
+				.left;
+			}
+			.p11 {
+				background: url('../images/car0.png');
+				.right;
+				.carStart;
+			}
+			.p02 {
+				background: url('../images/car0.png');
+				.carStart-level2;
+				.left;
+			}
+			.p12 {
+				background: url('../images/car0.png');
+				.right;
+				.carStart-level2;
+			}
+			.p03 {
+				background: url('../images/car0.png');
+				.carStart-level3;
+				.left;
+			}
+			.p13 {
+				background: url('../images/car0.png');
+				.right;
+				.carStart-level3;
+			}
+
+			.carStart {
+				-webkit-animation: carDown 2s;
+				-webkit-animation-iteration-count: infinite;
+				/*运动曲线：直线，速率相等*/
+				-webkit-animation-timing-function:linear;
+			}
+			@-webkit-keyframes carDown {
+				0% {top: -500px;};
+				100% {top: 100%;}
+			}
+			
+			.carStart-level2 {
+				-webkit-animation: carDown 1s;
+				-webkit-animation-iteration-count: infinite;
+				/*运动曲线：直线，速率相等*/
+				-webkit-animation-timing-function:linear;
+			}
+			.carStart-level3 {
+				-webkit-animation: carDown .7s;
+				-webkit-animation-iteration-count: infinite;
+				/*运动曲线：直线，速率相等*/
+				-webkit-animation-timing-function:linear;
+			}
+			.left {
+				left: 15px;
+
+			}
+			.right {
+				left: 190px;
+			}
+		} 
+	}
+}
+
+
